@@ -1,0 +1,461 @@
+﻿@{
+    ViewData["Title"] = "EditUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+<div class="container mt-5 mb-4">
+    <h4 class="text-center text-light text-decoration-underline mb-5" style="font-weight:bold">EDIT USER</h4>
+    <div class="row mb-4">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="gallery-uploader-wrap float-end mt-5" width="5" height="5" id="ShowImage">
+                <label class="uploader-img1">
+                    <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multiple" onchange="ShowNewImage();">
+                    <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <img id="UserNewImages" src="UserNewImage" style="width:150px ; height : 150px" class="float-start rounded-pill img-thumbnail" alt="UserImage" />
+            <div id="UserNewImge1"></div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="UserName" id="UserName" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Gender" id="Gender" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Age" id="Age" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Email" id="Email" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Religions" id="Religion" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="PhoneNo" id="PhoneNo" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="CNIC" id="CNIC" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="PostalCode" id="PostalCode" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="City" id="City" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Nationality" id="Nationality" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Passwords" id="Password" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="checkbox" class="AccountSta float-start mt-2" id="AccountStatus" />
+            <h5 class="text-light ms-4">Is Active</h5>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+
+        <div class="col-lg-6 col-sm-8 col-md-12">
+            <input type="text" placeholder="Address" class="form-control" id="Address"/>
+        </div>
+    </div>
+
+    <div class="row" id="ClassDetails">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <h5 style="color:white">Class</h5>
+            <input type="text" readonly="readonly" class="form-control mb-3" id="classname" />
+            <p class="text-muted">If you Don't Want to change Class and Section Please Select Recents Noted Above Text Boxes.</p>
+            <select class="form-select" id="class" onchange="changeclass();"></select>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <h5 style="color:white">Section</h5>
+            <input type="text" readonly="readonly" class="form-control mb-3" id="sectionname" />
+            <p class="text-muted">If you Don't Want to change Class and Section Please Select Recents Noted Above Text Boxes.</p>
+            <select class="form-select" id="section" onchange="changesection();"></select>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <h5 style="color:white">Fees Decided</h5>
+            <input type="text" placeholder="New Fees" class="form-control" id="FeesDecided"/>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5" id="Qualification">
+        <button class="btn btn-info add_field_button bg-warning">Add Qualification</button>
+        <div class="input_fields_wrap border rounded-5 mt-4"></div>
+    </div>
+
+    <div class="row mb-5" id="Experience">
+        <button class="btn btn-info add_field_experience bg-warning">Add Experience</button>
+        <div class="input_fields_wrapexperience border rounded-5 mt-4"></div>
+    </div>
+
+
+    <div id="ParentsInfo" class="mt-5">
+        <label class="text-light">Parent Info</label>
+        <input type="text" id="ParentsId" hidden="hidden"/>
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="Name" class="form-control" id="FatherName" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="PFatherName" class="form-control" id="PFatherName" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="CNIC" class="form-control" id="PCNIC" />
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="PhoneNo" class="form-control" id="PPhoneNo" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="Gender" class="form-control" id="PGender" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="Religion" class="form-control" id="PReligion" />
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="Email" class="form-control" id="PEmail" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="text" placeholder="Relation" class="form-control" id="PRelation" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <input type="checkbox" class="AliveStauts float-start mt-2" id="PIsAlive" />
+                <h5 class="text-light ms-4">Is Alive</h5>
+            </div>
+        </div>
+    </div>
+
+    <div id="AccountInfo">
+        <div class="row mb-5">
+            <div class="col-lg-4 col-md-8 col-sm-12">
+                <div id="NewDesignation">
+                    <h5 style="color:white">Designation</h5>
+                    <select id="Designation" class="form-select"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-12"></div>
+            <div class="col-lg-4 col-md-8 col-sm-12"></div>
+        </div>
+
+        <h4 style="color:white">Account Info</h4>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
+                <input type="text" class="form-control" id="AccountNumber" placeholder="Account Number" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
+                <input type="text" class="form-control" id="BankName" placeholder="Bank Name" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
+                <input type="checkbox" class="BankAccountStatus1 float-start mt-3" id="BankAccountStatus" />
+                <h5 class="text-light ms-4 mt-2">Active</h5>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-8 col-sm-12">
+                <input type="text" placeholder="Pay Decided" class="form-control" id="PayDecided" />
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-12"></div>
+            <div class="col-lg-4 col-md-8 col-sm-12"></div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-11 col-md-11 col-sm-11"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <button class="btn btn-light" id="UpdateStudent" onclick="UpdateStudent();">Update</button>
+            <button class="btn btn-light" id="UpdateTeacher" onclick="UpdateTeacher();">Update</button>
+            <button class="btn btn-light" id="UpdateStaff" onclick="UpdateStaff();">Update</button>
+        </div>
+    </div>
+
+</div>
+
+
+<style>
+    .uploader-img1 {
+        position: relative;
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.35rem;
+        border: 1px dashed #ccd1d6;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+</style>
+
+<script src="~/views/main/updatestudent.js"></script>
+<script src="~/views/main/updateteacher.js"></script>
+@*<script>
+    var id = 0;
+    var RoleId = 0;
+    $(document).ready(function () {
+        let url_str = window.location.href;
+        let url = new URL(url_str);
+        let search_params = url.searchParams;
+        let text = search_params.get('id');
+        const myArray = text.split(",");
+        id = myArray[0];
+        RoleId = myArray[1];
+        OnLoad();
+    })
+
+    function OnLoad() {
+        $('#UserNewImages').hide();
+        $('#AccountInfo').hide();
+        $('#NewDesignation').hide();
+        $('#Qualification').hide();
+        $('#Experience').hide();
+        $('#ParentsInfo').hide();
+        $('#ClassDetails').hide();
+
+        if (RoleId == 4 || RoleId == 5) {
+            $('#AccountInfo').show();
+            $('#NewDesignation').show();
+            $('#Qualification').show();
+            $('#Experience').show();
+            $('#ParentsInfo').hide();
+            $('#ClassDetails').hide();
+            OtherRoleDetails();
+        }
+        if (RoleId == 2) {
+            $('#AccountInfo').show();
+            $('#Qualification').show();
+            $('#Experience').show();
+            $('#ParentsInfo').hide();
+            $('#ClassDetails').hide();
+            $('#NewDesignation').hide();
+            TeacherDetails();
+        }
+        if (RoleId == 3) {
+            $('#ParentsInfo').show();
+            $('#ClassDetails').show();
+            $('#AccountInfo').hide();
+            $('#Qualification').hide();
+            $('#Experience').hide();
+            $('#NewDesignation').hide();
+            SutdentDetails();
+        }
+    }
+
+    function SutdentDetails() {
+        debugger
+        $.ajax({
+            url: '/Admin/GetUserbyId?id=' + id,
+            success: function (response) {
+                debugger
+                console.log('student', response);
+                $('#UserNewImge1').append('<img src="' + response.image + '" style="width:150px ; height : 150px" class="float-start rounded-pill img-thumbnail" alt="UserImage" />');
+                $('#UserName').val(response.name);
+                $('#Gender').val(response.gender);
+                $('#Age').val(response.age);
+                $('#Email').val(response.email);
+                $('#Religion').val(response.religion);
+                $('#PhoneNo').val(response.phone);
+                $('#CNIC').val(response.cnic);
+                $('#PostalCode').val(response.postalCode);
+                $('#Address').val(response.address);
+                $('#City').val(response.city);
+                $('#Nationality').val(response.nationality);
+                $('#Password').val(response.password);
+                $('#classname').val(response.classId);
+                $('#sectionname').val(response.sectionName);
+                $('#FatherName').val(response.parent?.name);
+                $('#PFatherName').val(response.parent?.fatherName);
+                $('#ParentsId').val(response.parent?.id);
+                $('#PCNIC').val(response.parent?.cnic);
+                $('#PPhoneNo').val(response.parent?.phoneNo);
+                $('#PGender').val(response.parent?.gender);
+                $('#PReligion').val(response.parent?.religion);
+                $('#PEmail').val(response.parent?.email);
+                $('#PRelation').val(response.parent?.relation);
+                if (response.status == true || response.status == null)
+                {
+                    $('#AccountStatus').attr('checked',true);
+                }
+                else
+                {
+                    $('#AccountStatus').attr('checked', false);
+                }
+                if (response.parent?.isAlive == true) {
+                    $('#PIsAlive').attr('checked', true);
+                }
+                else {
+                    $('#PIsAlive').attr('checked', false);
+                }
+                GetClassSectionsData();
+            },
+            error: function (data) {
+                debugger
+            }
+        })
+    }
+
+    function GetClassSectionsData() {
+        $.ajax({
+            url: '/Admin/GetClassSectionsData',
+            type: 'Get',
+            success: function (response) {
+                var html = "";
+                var sect = "";
+                var clas = response.class;
+                var section = response.sections;
+                for (var i = 0; i < clas.length; i++) {
+                    html += '<option value="' + clas[i].id + '">' + clas[i].name + '</option>';
+                }
+                $('#class').append(html);
+
+                for (var i = 0; i < section.length; i++) {
+                    sect += '<option value="' + section[i].name + '">' + section[i].name + '</option>';
+                }
+                $('#section').append(sect);
+            }
+        })
+    }
+    function TeacherDetails() {
+        debugger
+    }
+
+    function OtherRoleDetails() {
+        debugger
+    }
+
+    function changesection(){
+        debugger
+        var section = $('#section').val();
+        $('#sectionname').val(section);
+    }
+
+    function changeclass() {
+        debugger
+        var class1 = $('#class').val();
+        $('#classname').empty();
+        $('#classname').val(class1);
+    }
+
+    function ShowNewImage(input) {
+        debugger
+        $('#UserNewImages').show();
+        var file = $("input[type=file]").get(0).files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                $('#UserNewImages').attr("src", reader.result);
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function UpdateStudent() {
+        debugger
+        $('#ModalHeader').empty();
+        $('#ModalBody').empty();
+
+        var Isalive = false;
+        var AccountStatus = true;
+        var form = new FormData();
+        var alivestauts1 = $('.AliveStauts:checkbox');
+        $.each(alivestauts1, function (key, item) {
+            if (item.checked == true) {
+                Isalive = true;
+            }
+        })
+
+        var StudentAccount = $('.AccountSta:checkbox');
+        $.each(StudentAccount, function (key, item) {
+            if (item.checked == false) {
+                AccountStatus = false;
+            }
+        })
+        var file = $('#multiple')[0].files[0];
+        form.append('SudentImage', $('#multiple')[0].files[0]);
+        form.append('StudentName', $('#UserName').val());
+        var classss = $('#class').val();
+        var sectionsss = $('#section').val();
+        var Student = $('#UserName').val();
+        var Religion = $('#Religion').val();
+        var Password = $('#Password').val();
+        form.append('id',id);
+        form.append('ClassName', $('#class').val());
+        form.append('SectionName', $('#section').val());
+        form.append('Password', $('#Password').val());
+        form.append('FatherName', $('#FatherName').val());
+        form.append('Email', $('#Email').val());
+        form.append('Phone', $('#PhoneNo').val());
+        form.append('CNIC', $('#CNIC').val());
+        form.append('Gender', $('#Gender').val());
+        form.append('Age', $('#Age').val());
+        form.append('City', $('#City').val());
+        form.append('Nationality', $('#Nationality').val());
+        form.append('Address', $('#Address').val());
+        form.append('PostalCode', $('#PostalCode').val());
+        form.append('Religion', $('#Religion').val());
+        form.append('AccountStatus', AccountStatus);
+        form.append('AliveStatus', Isalive);
+        form.append('PName', $('#FatherName').val());
+        form.append('PFatherName', $('#FatherName').val());
+        form.append('PCNIC', $('#PCNIC').val());
+        form.append('PPhone', $('#PPhoneNo').val());
+        form.append('PGender', $('#PGender').val());
+        form.append('PReligion', $('#PReligion').val());
+        form.append('PEmail', $('#PEmail').val());
+        form.append('PRelation', $('#PRelation').val());
+        form.append('Pid', $('#ParentsId').val());
+        debugger
+        $.ajax({
+            url: '/Admin/UpdateStudent',
+            type: 'POST',
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $('#ModalHeader').append('<h4>Sucees</h4>');
+                $('#ModalBody').append('<p>Operation Successfully Completed.</p>');
+                $('#MyModal').modal('show');
+
+            },
+            error: function (data) {
+                debugger
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Error While Saving Product</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+</script>*@

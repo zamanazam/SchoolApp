@@ -1,0 +1,251 @@
+﻿@{
+    ViewData["Title"] = "VisionandMission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+
+<div ng-app="app">
+    <div ng-controller="VisionandMissionController">
+        <div ng-init="OnLoad()">
+            <div ng-class="{'day-mode': isAdmin , 'night-mode': !isAdmin }">
+                <h4 class="fa-2x mt-5 ms-5 position-absolute MainTextColor">Vission & Mission</h4>
+                <a href="#" ng-dblclick="ChangeImage('ShowImage')"><img ng-src="{{MainImage}}" class="img1" /></a>
+                <div class="text-center">
+                <div class="gallery-uploader-wrap" ng-show="ShowImage" width="5" height="5" id="ShowImage">
+                    <label class="uploader-img1">
+                            <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multipleShowImage" ng-model="MissionImage1" ng-change="ShowNewImage(this);">
+                        <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                        </svg>
+                    </label>
+                </div>
+                </div>
+            </div>
+            <div class="container bg-light">
+                <div class="row mt-5">
+                    <p style="text-align:center ; font-size: 20px"><b style="color:#3C3C3C">Our </b><b class="fontcolrwhite">Plan</b></p>
+                    <p class="MainText fontcolrwhite p-2" id="MainText2" ng-dblclick="ChangeData('MainText2')" style="font-family:Arial, Helvetica, sans-serif ;font-size:15px ;">
+                        {{MainText1}}
+                        </p>
+                </div>
+            </div>
+            <div class="container" ng-repeat="vm in VisionandMission">
+                <div class="row mt-5">
+                    <h1 id="DataId" hidden="hidden" style="font-family:Arial, Helvetica, sans-serif ;font-size:15px ;">{{vm.id}}</h1>
+                    <div class="col-lg-6 col-md-6 col-sm-12 bg-light">
+                        <p class="fontcolrwhite bg-light lh-lg p-5" id="VisionText2" ng-dblclick="ChangeData('VisionText2')" style="text-align:justify">
+                            {{vm.visionText}}
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="gallery-uploader-wrap float-end mt-5" ng-show="ShowImage1" width="5" height="5" id="ShowImage1">
+                            <label class="uploader-img1">
+                                <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multipleShowImage1" ng-model="MissionImage1" ng-change="ShowNewImage(this);">
+                                <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="ms-5">
+                            <a href="#" ng-dblclick="ChangeImage('ShowImage1')"> <img ng-src="{{vm.visionImage}}" class="" style="width:-webkit-fill-available;" /></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mt-5">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="ms-5">
+                            <div class="gallery-uploader-wrap float-end mt-5" ng-show="ShowImage2" width="5" height="5" id="ShowImage2">
+                                <label class="uploader-img1">
+                                    <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multipleShowImage2" ng-model="MissionImage1" ng-change="ShowNewImage(this);">
+                                    <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                            <a href="#" id="img233" ng-dblclick="ChangeImage('ShowImage2')"> <img ng-src="{{vm.missionImage}}" class="mt-3" style="width:-webkit-fill-available;" /></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="ms-5">
+                            <p class="fontcolrwhite bg-light lh-lg p-5" id="MissionText2" ng-dblclick="ChangeData('MissionText2')" style="text-align:justify">
+                                {{vm.missionText}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 mb-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12"></div>
+                    <div class="col-lg-4 col-md-6 col-sm-12"></div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <button class="btn btn-outline-success float-end" id="UpdateVisionMission" ng-show="ShowUpdateButton" ng-click="UpdateVision()">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/angularjs/aboutus/vissionandmission.js"></script>
+<style>
+    .uploader-img1 {
+        position: relative;
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.35rem;
+        border: 1px dashed #ccd1d6;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+</style>
+<style>
+    .img {
+        height: 200px;
+        width: 100%;
+        margin-bottom: 3%;
+    }
+    
+    .img1 {
+        height: 500px;
+        width: 100%;
+    }
+
+    .nextimg {
+        width: 60%
+    }
+
+    .fontcolrwhite {
+        color: black;
+        font-family: system-ui;
+        text-align: justify;
+    }
+
+    .MainTextColor {
+        color: white;
+        font-weight: bold;
+    }
+</style>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        overflow-x: hidden;
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    .img {
+        height: 200px;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    .text {
+        font-size: 40px;
+        color: deepskyblue;
+        text-align: left;
+        top: 25%;
+        left: 5%;
+    }
+
+    .section-container {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .section-container .columns {
+            flex: 0 0 auto;
+            width: 50%;
+        }
+
+            .section-container .columns.image {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+    .section-container1 .columns {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+
+    /* Clear floats after image containers */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .section-container .columns.content .content-container {
+        padding: 40px 50px;
+    }
+
+        .section-container .columns.content .content-container h5 {
+            font-weight: 700;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .section-container .columns.content .content-container p {
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+    @@media screen and (max-width: 767px) {
+
+        .section-container {
+            flex-flow: row wrap;
+        }
+
+            .section-container .columns.image {
+                display: block;
+                order: 1;
+                width: 90%;
+                height: 250px;
+                margin-left: 8%;
+            }
+
+            .section-container .columns.content {
+                display: block;
+                order: 2;
+                width: 100%;
+            }
+
+                .section-container .columns.content .content-container {
+                    padding: 20px 35px;
+                }
+
+                    .section-container .columns.content .content-container h5 {
+                        margin-bottom: 5px;
+                    }
+    }
+</style>

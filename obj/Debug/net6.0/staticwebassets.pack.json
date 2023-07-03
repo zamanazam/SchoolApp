@@ -1,0 +1,481 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SchoolApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SchoolApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\AngularJs\\AboutUs\\Middle.js",
+      "PackagePath": "staticwebassets\\AngularJs\\AboutUs\\Middle.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\AngularJs\\AboutUs\\OurTeam.js",
+      "PackagePath": "staticwebassets\\AngularJs\\AboutUs\\OurTeam.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\AngularJs\\AboutUs\\Primary.js",
+      "PackagePath": "staticwebassets\\AngularJs\\AboutUs\\Primary.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\AngularJs\\AboutUs\\Secondary.js",
+      "PackagePath": "staticwebassets\\AngularJs\\AboutUs\\Secondary.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\AngularJs\\AboutUs\\VissionandMission.js",
+      "PackagePath": "staticwebassets\\AngularJs\\AboutUs\\VissionandMission.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\AngularJs\\app\\app.js",
+      "PackagePath": "staticwebassets\\AngularJs\\app\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Fees\\CheckFees.js",
+      "PackagePath": "staticwebassets\\Views\\Fees\\CheckFees.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Main\\AddUser.js",
+      "PackagePath": "staticwebassets\\Views\\Main\\AddUser.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Main\\UpdateSatff.js",
+      "PackagePath": "staticwebassets\\Views\\Main\\UpdateSatff.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Main\\UpdateStudent.js",
+      "PackagePath": "staticwebassets\\Views\\Main\\UpdateStudent.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Main\\UpdateTeacher.js",
+      "PackagePath": "staticwebassets\\Views\\Main\\UpdateTeacher.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Main\\UsersTable.js",
+      "PackagePath": "staticwebassets\\Views\\Main\\UsersTable.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Result\\AddResult.js",
+      "PackagePath": "staticwebassets\\Views\\Result\\AddResult.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Views\\Result\\CheckResult.js",
+      "PackagePath": "staticwebassets\\Views\\Result\\CheckResult.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\11111111111111111111111111.PNG",
+      "PackagePath": "staticwebassets\\images\\11111111111111111111111111.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\240_F_328723424_C4D1XmfXcDXOzRD3c378ndbaccaNyoJ1.jpg",
+      "PackagePath": "staticwebassets\\images\\240_F_328723424_C4D1XmfXcDXOzRD3c378ndbaccaNyoJ1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\240_F_505413533_Igqsyf1Tqt30yIGsxpCgIsBgp9PICNw5.jpg",
+      "PackagePath": "staticwebassets\\images\\240_F_505413533_Igqsyf1Tqt30yIGsxpCgIsBgp9PICNw5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\7280763.jpg",
+      "PackagePath": "staticwebassets\\images\\7280763.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\Capture.PNG",
+      "PackagePath": "staticwebassets\\images\\Capture.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\Design-Transparent-PNG.png",
+      "PackagePath": "staticwebassets\\images\\Design-Transparent-PNG.png"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\Handsom.jpg",
+      "PackagePath": "staticwebassets\\images\\Handsom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\Hassan.jpg",
+      "PackagePath": "staticwebassets\\images\\Hassan.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\LASTIMA.jpg",
+      "PackagePath": "staticwebassets\\images\\LASTIMA.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\MIDDLE1.jpg",
+      "PackagePath": "staticwebassets\\images\\MIDDLE1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\MIDDLE2.jpg",
+      "PackagePath": "staticwebassets\\images\\MIDDLE2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\MIDDLE3.jpg",
+      "PackagePath": "staticwebassets\\images\\MIDDLE3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\PRIMARY.jpg",
+      "PackagePath": "staticwebassets\\images\\PRIMARY.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\Primarykids.jpg",
+      "PackagePath": "staticwebassets\\images\\Primarykids.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\abc-3523453_640.jpg",
+      "PackagePath": "staticwebassets\\images\\abc-3523453_640.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\about-1.jpg",
+      "PackagePath": "staticwebassets\\images\\about-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\about-2.jpg",
+      "PackagePath": "staticwebassets\\images\\about-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\admission.jpg",
+      "PackagePath": "staticwebassets\\images\\admission.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\black-rain-abstract-dark-power.jpg",
+      "PackagePath": "staticwebassets\\images\\black-rain-abstract-dark-power.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\c1.PNG",
+      "PackagePath": "staticwebassets\\images\\c1.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\children-sharing-and-playing-with-toys.jpg",
+      "PackagePath": "staticwebassets\\images\\children-sharing-and-playing-with-toys.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\colorful-182220_960_720.jpg",
+      "PackagePath": "staticwebassets\\images\\colorful-182220_960_720.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\depositphotos_4761243-stock-photo-schoolchildren-and-teacher-studying-in.jpg",
+      "PackagePath": "staticwebassets\\images\\depositphotos_4761243-stock-photo-schoolchildren-and-teacher-studying-in.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\empty-blackboard.jpg",
+      "PackagePath": "staticwebassets\\images\\empty-blackboard.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\images.png",
+      "PackagePath": "staticwebassets\\images\\images.png"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\istockphoto-1141314072-612x612.jpg",
+      "PackagePath": "staticwebassets\\images\\istockphoto-1141314072-612x612.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\istockphoto-1319232417-612x612.jpg",
+      "PackagePath": "staticwebassets\\images\\istockphoto-1319232417-612x612.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\logo 1.ai-1.jpg",
+      "PackagePath": "staticwebassets\\images\\logo 1.ai-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\logo_1.ai-1-removebg-preview.png",
+      "PackagePath": "staticwebassets\\images\\logo_1.ai-1-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\lucas-george-wendt-49iJ7bzbCoI-unsplash.jpg",
+      "PackagePath": "staticwebassets\\images\\lucas-george-wendt-49iJ7bzbCoI-unsplash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\new.jpg",
+      "PackagePath": "staticwebassets\\images\\new.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\photo-1676287569521-20f0fe96eebf.avif",
+      "PackagePath": "staticwebassets\\images\\photo-1676287569521-20f0fe96eebf.avif"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\png-clipart-mario-mario.png",
+      "PackagePath": "staticwebassets\\images\\png-clipart-mario-mario.png"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\row-of-young-adults-at-work.jpg",
+      "PackagePath": "staticwebassets\\images\\row-of-young-adults-at-work.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\school-logo-design-template-free-vector.jpg",
+      "PackagePath": "staticwebassets\\images\\school-logo-design-template-free-vector.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\school.jpg",
+      "PackagePath": "staticwebassets\\images\\school.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\serious-students-focused-class-assignment.jpg",
+      "PackagePath": "staticwebassets\\images\\serious-students-focused-class-assignment.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\website.jpg",
+      "PackagePath": "staticwebassets\\images\\website.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\wrtiting-tools.jpg",
+      "PackagePath": "staticwebassets\\images\\wrtiting-tools.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\images\\zama-removebg-preview.jpg",
+      "PackagePath": "staticwebassets\\images\\zama-removebg-preview.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Zaman\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SchoolApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.SchoolApp.props",
+      "PackagePath": "build\\SchoolApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.SchoolApp.props",
+      "PackagePath": "buildMultiTargeting\\SchoolApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.SchoolApp.props",
+      "PackagePath": "buildTransitive\\SchoolApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Add Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+<div class="container bg-light p-4 ps-5 rounded-3">
+    <h3 class="CentreText text-uppercase text-info mt-5 mb-5" style="font-weight:bold">Add Result Form</h3>
+    <div class="row mb-4 mt-4   ">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label>Class Name</label>
+            <select class="form-select w-lg-75" id="Classes" onchange="GetSectionNames();"></select>
+            <label class="ps-lg-5"> Section</label>
+            <form id="SectionName" name="radioname" class="d-flex border rounded-2" action="/action_page.php"></form>
+            <input type="text" id="sectionval" hidden="hidden" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label class="ps-lg-5"> Month</label>
+            <select id="ResultMonth" class="form-select"></select>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label>Year</label>
+            <input type="text" placeholder="2000 To 2050" id="ResultYear" class="form-control" />
+        </div>
+    </div>
+    <div id="AddResultForm">
+        <div class="row mb-4 mt-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <label>Student Name</label>
+                <select id="StudentsName" class="form-select" onchange="ShowRollNo();"></select>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <label>Roll No</label>
+                <input type="text" id="StdRollNoValue" readonly="readonly" class="form-control" />
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+            </div>
+        </div>
+        <div id="SubjectResults" class="subjectresult"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12"></div>
+            <div class="col-lg-3 col-md-6 col-sm-12"></div>
+            <div class="col-lg-3 col-md-6 col-sm-12"> </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <button class="float-lg-end btn btn-outline-success mt-2" onclick="SaveResult();"> Save </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="MyModala" class="modal fade text-container" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="ModalHeadera"></div>
+                <button type="button" id="ModalClosea" class="close btn btn-danger float-end" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id="ModalBodya">
+            </div>
+            <div class="modal-footer">
+                <button id="ModalCancela" class="btn btn-danger float-end">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="~/views/result/addresult.js"></script>
+<style>
+    .CentreText {
+        text-align: center;
+    }
+
+</style>

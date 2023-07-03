@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - SchoolApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SchoolApp.styles.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href=”//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css” rel=”stylesheet”>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="~/angularjs/app/app.js"></script>
+
+</head>
+<body class="bg-transparent">
+    <nav class="navbar navbar-expand-lg text-muted navbar-dark navbackcolor" aria-label="Main navigation">
+        <div class="container-fluid">
+            <a><img src="~/images/school-logo-design-template-free-vector.jpg" style="height:80px ; width: 70px"/></a>
+            <a class="navbar-brand text-light fw-bold ms-5" href="#">Al-Fazal Public School</a>
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse offcanvas-collapse w-50 text-light float-end" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" aria-current="page" href="/Home/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/VisionandMission/VisionandMissionView"
+                           target="_blank">Vision and Mission</a>
+                    </li>
+                    <li class="nav-item dropdown text-muted">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-flip="false"
+                           data-toggle="dropdown" aria-expanded="false">AboutUs</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                            <li>
+                                <a class="dropdown-item text-light " href="/Education/PrimaryEducationView">Primary Education</a>
+                                <a class="dropdown-item text-light" href="/Education/MiddleEducationView">Middle Education</a>
+                                <a class="dropdown-item text-light" href="/Education/SecondaryEducationView">Secondary Education</a>
+                                <a class="dropdown-item text-light" href="/Education/OurTeamView">Our Team</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown" id="AboutUsNav">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="UsersNav" data-flip="false"
+                           data-toggle="dropdown" aria-expanded="false">Users</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                            <li>
+                                <a class="dropdown-item text-light" href="/Admin/AllUsersData">All Users</a>
+                                <a class="dropdown-item text-light" href="/Admin/AddUserPage" id="AddUserNav">AddUser</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="dropdown2" data-flip="false"
+                           data-toggle="dropdown" aria-expanded="false">Results</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                            <li><a class="dropdown-item text-light" href="/Admin/CheckResultPage">Check</a></li>
+                            <li><a class="dropdown-item text-light" href="/Admin/AddNewResultPage" id="AddResultNav">Add</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="dropdown2" data-flip="false"
+                           data-toggle="dropdown" aria-expanded="false">Fees</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                            <li><a class="dropdown-item text-light" href="/Fees/GetViewForFees">Check</a></li>
+                            <li><a class="dropdown-item text-light" href="/Fees/AddFeesView" id="AddFeesNav">Add</a></li>
+                        </ul>
+                    </li> 
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="AddPayNav" data-flip="false"
+                           data-toggle="dropdown" aria-expanded="false">Pay</a>
+                        <ul class="dropdown-menu fw-bold text-light" aria-labelledby="dropdown2">
+                            <li><a class="dropdown-item text-light" href="/Fees/PayRollView">Check</a></li>
+                            <li><a class="dropdown-item text-light" href="/Fees/AddPayRollView" id="AddNewPaytNav">Add</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="AttendanceNav" data-flip="false"
+                           data-toggle="dropdown" aria-expanded="false" target="_blank">Attendance</a>
+                        <ul class="dropdown-menu fw-bold text-light" aria-labelledby="dropdown2">
+                            <li><a class="dropdown-item text-light" href="/Home/TeacherAttendancePageView">Teacher Attendance</a></li>
+                            <li><a class="dropdown-item text-light" href="/Home/StudentAttendancePageView">Student Attendance</a></li>
+                        </ul>
+                    </li> 
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/Home/LogInPage" id="SignIn"
+                           target="_blank">SignIn</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" id="SignOut" onclick="SignOut();">SignOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  @*  <header class="bg-gradient">
+        <div class="row bg-danger">
+            <div>
+                <p class="float-start ms-lg-5 ms-md-5 mt-2" style="color:white ; font-weight:bold;">ContactInfo: 041-2694115</p>
+                <p class="float-end me-lg-5 me-md-5 mt-2" style="color:white ; font-weight:bold;">Email: Al-Fazal Public High School </p>
+            </div>
+        </div>
+    </header>*@
+    <div>
+        @RenderBody()
+    </div>
+
+    <div class="container-fluid backmaincolor text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href=""
+                   class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+                   style="font-size: 40px; line-height: 40px">
+                    <i class="flaticon-043-teddy-bear"></i>
+                    <span class="text-white">KidKinder</span>
+                </a>
+                <p>
+                    Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea
+                    dolor et magna dolor, elitr rebum duo est sed diam elitr. Stet elitr
+                    stet diam duo eos rebum ipsum diam ipsum elitr.
+                </p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px"
+                       href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px"
+                       href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px"
+                       href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                       style="width: 38px; height: 38px"
+                       href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Get In Touch</h3>
+                <div class="d-flex">
+                    <h4 class="fa fa-map-marker-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Address</h5>
+                        <p>P#115 St#8 Mohalla Nawaz Park Faisalabad, Punjab Pakistan</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-envelope text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Email</h5>
+                        <p>info@example.com</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-phone-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Phone</h5>
+                        <p>+012 345 67890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="/Home/Index"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="/Education/OurTeamView"><i class="fa fa-angle-right mr-2"></i>Our Team</a>
+                    <a class="text-white mb-2" href="/VisionandMission/VisionandMissionView"><i class="fa fa-angle-right mr-2"></i>Our Vision</a>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Teachers</a>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Blog</a>
+                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Newsletter</h3>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control border-0 py-4"
+                               placeholder="Your Name"
+                               required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email"
+                               class="form-control border-0 py-4"
+                               placeholder="Your Email"
+                               required="required" />
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block border-0 py-3"
+                                type="submit">
+                            Submit Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid pt-5"
+             style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;">
+            <p class="m-0 text-center text-white">
+                &copy;
+                <a class="text-primary font-weight-bold" href="#">Your Site Name</a>.
+                All Rights Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed by
+                <a class="text-primary font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                <br />Distributed By:
+                <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+            </p>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"
+    integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <div id="MyModal" class="modal fade text-container" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="ModalHeader"></div>
+                    <button type="button" id="ModalClose" class="close btn btn-danger float-end" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="ModalBody">
+                </div>
+                <div class="modal-footer">
+                    <button id="ModalCancel" class="btn btn-danger float-end">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            background-color: #00394F;
+        }
+
+        .dropdown-item:hover {
+            background-color: saddlebrown;
+            color: #00394F;
+        }
+
+        .dropdown-item {
+            background-color: #00394F;
+            color: #00394F;
+        }
+        .backmaincolor{
+            background-color: #00394F;
+        }
+        .navtextcolor{
+            color: #00394F;
+            font-weight:bold;
+        }
+        .navbackcolor{
+            background-color: #00394F;
+        }
+    </style>
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        var token = localStorage.getItem('token');
+        var RoleId = localStorage.getItem('RoleId');
+        var UserId = localStorage.getItem("UserId");
+        var UserName = localStorage.getItem("UserName");
+        var RoleName = localStorage.getItem("RoleName");
+
+        $('#AddResultNav').hide();
+        $('#CheckResultNav').hide();
+        $('#AddUserNav').hide();
+        $('#AboutUsNav').hide();
+        $('#AddUser').hide();
+        $('#AddPayNav').hide();
+        $('#AddFeesNav').hide();
+
+        $('#MyModal').modal('hide');
+        $('#SignOut').show();
+        $('#SignIn').show();
+
+        if (token == null) {
+            $('#SignOut').hide();
+
+        } else {
+            $('#SignIn').hide();
+
+            if (RoleId == "1") {
+                $('#AddResultNav').show();
+                $('#CheckResultNav').show();
+                $('#AddUserNav').show();
+                $('#AboutUsNav').show();
+                $('#AddUser').show();
+                $('#AddPayNav').show();
+                $('#AddFeesNav').show();
+            }
+            if (RoleId == "2") {
+                $('#CheckResultNav').show();
+                $('#AboutUsNav').show();
+                $('#AddPayNav').show();
+                $('#AddNewPaytNav').hide();
+
+            }
+            if (RoleId == "3") {
+                $('#CheckResultNav').show();
+            }
+            if (RoleId == "4" || RoleId == "5") {
+                $('#CheckResultNav').hide();
+            }
+        }
+
+    })
+
+    function SignOut(){
+        localStorage.removeItem('RoleId');
+        localStorage.removeItem("UserId");
+        localStorage.removeItem("UserName");
+        localStorage.removeItem("RoleName");
+        localStorage.removeItem('token');
+        window.location.replace('/Home/LogInPage');
+    }
+
+    $('#ModalClose').click(function () {
+        $('#ModalHeader').empty();
+        $('#ModalBody').empty();
+        $('#MyModal').modal('hide');
+    })
+    $('#ModalCancel').click(function () {
+        $('#ModalHeader').empty();
+        $('#ModalBody').empty();
+        $('#MyModal').modal('hide');
+    })
+
+
+</script>
+

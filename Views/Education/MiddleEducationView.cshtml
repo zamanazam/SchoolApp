@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "MiddleEducation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+
+<script src="~/angularjs/aboutus/middle.js"></script>
+<div ng-app="app">
+    <div ng-controller="MiddleController">
+        <div ng-init="OnLoad()">
+            <div>
+                <h4 class="mt-5 ms-5 fa-2x MainTextColor position-absolute">MIDDLE ACADEMICS</h4>
+                <a href="#" ng-dblclick="ChangeImage('ShowImage')"><img src="{{MainImage}}" class="img" /></a>
+                <div class="text-center">
+                    <div class="gallery-uploader-wrap" ng-show="ShowImage" width="5" height="5" id="ShowImage">
+                        <label class="uploader-img1">
+                            <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multipleShowImage" ng-model="MissionImage1" ng-change="ShowNewImage(this);">
+                            <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row bg-light">
+                    <p class="fw-bold text-center lh-lg" id="MiddleHeading1" ng-dblclick="ChangeData('MiddleHeading1')">{{MiddleHeading}} </p>
+                    <p class="fontcolrwhite lh-lg" id="MiddleHeadingText1" ng-dblclick="ChangeData('MiddleHeadingText1')">{{MiddleHeadingText}}</p>
+                </div>
+
+                <div class="row mt-5" ng-repeat="Middle in MiddleData">
+                    <div class="col-lg-6 col-md-6 col-sm-12 bg-light">
+                        <h1 id="DataId" hidden="hidden">{{Middle.id}}</h1>
+                        <p class="fontcolrwhite lh-lg p-3" id="MiddleText1" ng-dblclick="ChangeData('MiddleText1')">{{Middle.text}}</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                     @*   <div class="d-flex">*@
+                        <a href="#" ng-dblclick="ChangeImage('ShowImage1')"><img src="{{Middle.middleImage}}" class="w-75 ms-5 mt-3" /></a>
+                        <div class="text-center">
+                            <div class="gallery-uploader-wrap" ng-show="ShowImage1" width="5" height="5" id="ShowImage1">
+                                    <label class="uploader-img1 mt-5">
+                                    <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multipleShowImage1" ng-model="MissionImage1" ng-change="ShowNewImage(this);">
+                                    <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+                 @*       </div>*@
+                    </div>
+                </div>
+                <div class="row mt-5 mb-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12"></div>
+                    <div class="col-lg-4 col-md-6 col-sm-12"></div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <button class="btn btn-outline-success float-end" id="UpdateVisionMission" ng-show="ShowUpdateButton" ng-click="UpdateMiddle()">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .img {
+        height: 500px;
+        width: 100%;
+        margin-bottom: 3%;
+    }
+
+    .nextimg {
+        width: 70%
+    }
+
+    .fontcolrwhite {
+        color: black;
+        font-family: system-ui;
+        text-align: justify;
+    }
+
+    .MainTextColor {
+        color: white;
+        font-weight: bold;
+    }
+
+    .uploader-img1 {
+        position: relative;
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.35rem;
+        border: 1px dashed #ccd1d6;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+</style>    

@@ -1,0 +1,230 @@
+﻿@{
+    ViewData["Title"] = "AddUserPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+<div class="container border rounded-3 p-4 mt-5" style="background-color: #00394F;">
+    <h4 class="text-light text-center mb-5 text-decoration-underline" style="font-weight : bold">ADD USER FORM</h4>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <form action="/action_page.php">
+                <div id="radioid" class="d-flex">
+                    <div class="bg-gradient p-4 rounded-3 float-start ms-5">
+                        <input type="radio" id="Teacher123" name="fav_language" value="1" onclick="ShowData()">
+                        <label class="h6" for="html" style="color: white">Teacher</label><br>
+                    </div>
+                    <div class="bg-gradient p-4 rounded-3 ms-5 me-5">
+                        <input type="radio" id="Student123" name="fav_language" value="2" onclick="ShowData()">
+                        <label class="h6" for="css" style="color: white">Student</label><br>
+                    </div> 
+                    
+                    <div class="bg-gradient p-4 rounded-3 float-end">
+                        <input type="radio" id="Other123" name="fav_language" value="3" onclick="ShowData()">
+                        <label class="h6" for="css" style="color: white">Other</label><br>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="gallery-uploader-wrap float-end mt-5" width="5" height="5" id="ShowImage">
+                <label class="uploader-img1">
+                    <input type="file" multiple="multiple" name="multiple" hidden="hidden" id="multiple" onchange="ShowNewImage();">
+                    <svg xmlns="savedimages" fill="#999" width="32" height="32" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M16.83 4L15 2H9L7.17 4H2v16h20V4h-5.17zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <img id="UserNewImage" style="width:150px ; height : 150px" class="float-start rounded-pill img-thumbnail" placeholder="UserImage" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Email" placeholder="Email" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Name" placeholder="Name" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="FatherName" placeholder="FatherName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="PhoneNo" placeholder="PhoneNo" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Age" placeholder="Age" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Gender" placeholder="Gender" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="CNIC" placeholder="CNIC" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Religion" placeholder="Religion" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="PostalCode" placeholder="Postal Code" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="City" placeholder="City" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Nationality" placeholder="Nationality" />
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <input type="text" class="form-control" id="Password" placeholder="Password" />
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <input type="text" class="form-control" id="Address" placeholder="Address" />
+        </div>
+    </div>
+
+
+    <div class="row" id="ClassDetails">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <h5 style="color:white">Class</h5>
+            <select class="form-select" id="class"></select>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <h5 style="color:white">Section</h5>
+            <select class="form-select" id="section"></select>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+            <h5 style="color:white">Decided Fees</h5>
+            <input type="text" class="form-control" placeholder="Decided Fees" id="DecidedFees"/>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5" id="Qualification">
+        <button class="btn btn-info add_field_button bg-warning">Add Qualification</button>
+        <div class="input_fields_wrap border rounded-5 mt-4"></div>
+    </div>
+
+    <div class="row mb-5" id="Experience">
+        <button class="btn btn-info add_field_experience bg-warning">Add Experience</button>
+        <div class="input_fields_wrapexperience border rounded-5 mt-4"></div>
+    </div>
+
+    <div id="ParentsInfo">
+        <h4 style="color:white">Parent Info</h4>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PName" placeholder="Name" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PFatherName" placeholder="FatherName" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PCNIC" placeholder="CNIC" />
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PPhoneNo" placeholder="PhoneNo" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PGender" placeholder="Gender" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PReligion" placeholder="Religion" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PEmail" placeholder="Email" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="PRelation" placeholder="Relation" />
+            </div>
+        </div>
+        <div class="row mb-5">
+            <form>
+                <input type="checkbox" id="AliveStatus" class="AliveStatus field__toggle-input" value="1" />
+                <label style="color:white">IsAlive</label>
+            </form>
+        </div>
+    </div>
+
+    <div id="AccountInfo">
+        <div class="row mb-5">
+            <div class="col-lg-4 col-md-8 col-sm-12">
+                <div id="NewDesignation">
+                    <h5 style="color:white">Designation</h5>
+                    <select id="Designation" class="form-select"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-12"></div>
+            <div class="col-lg-4 col-md-8 col-sm-12"></div>
+        </div>
+
+        <h4 style="color:white">Account Info</h4>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="AccountNumber" placeholder="Account Number" />
+                <input type="text" class="form-control mt-5" id="SailoryDecided" placeholder="Sailory Decided" />
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="BankName" placeholder="Bank Name" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                <input type="text" class="form-control" id="AccountStatus" placeholder="Account Status" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-lg-11 col-md-11 col-sm-11"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <button class="btn btn-light" id="SaveUser">Save</button>
+        </div>
+    </div>
+</div>
+<style>
+    .uploader-img1 {
+        position: relative;
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.35rem;
+        border: 1px dashed #ccd1d6;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+</style>    
+<script src="~/views/main/adduser.js"></script>

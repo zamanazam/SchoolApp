@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "OurTeam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+<script src="~/angularjs/aboutus/ourteam.js"></script>
+<div ng-app="app">
+    <div ng-controller="OurTeamController">
+        <div ng-init="OnLoad()">
+          
+            <div class="container">
+                <div class="row mb-4"> 
+                    <div>
+                        <i class="fa fa-plus mt-5 ms-5 float-end bg-light p-2 border rounded" ng-show="AddNewModalIcon" style="font-size:48px;color:deepskyblue" ng-click="AddNewMemberInfo()"></i>
+                    </div>
+                    </div>
+                <div class="row border rounded-2 bg-light" ng-show="AddNewModal">
+                    <div class="text-center"><h4 class="text-info mt-3" style="font-weight: bold;">ADD NEW MEMBER</h4></div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-4">
+                        <input type="text" placeholder="Designation To Show" id="NewDesignation" class="form-control " />
+                        <select id="NewTeachers" class="form-select mt-5"></select>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-4">
+                        <textarea type="text" placeholder="Description" id="NewDescription" class="form-control mt-4 p-4"></textarea>
+                        <button class="btn btn-outline-info mt-4 mb-3 float-end" ng-click="AddNewMembers()">Add</button>
+                    </div>  
+                </div>
+
+
+                <div class="row mb-4 mt-2" ng-model="ChangeData" ng-repeat="OurTeam in OurTeamData" ng-dblclick="ChangeRowData(OurTeam.id)">
+                    <div class="col-lg-8 col-md-8 col-sm-12 ">
+                        <p style="text-align:justify ; background-color: #00394F" class="ms-5 mt-1 lh-lg rounded badge p-2" id="Designation{{OurTeam.id}}">
+                            {{OurTeam.designation}}
+                        </p>
+                        <p style="text-align:justify" class="ms-5 mt-1 p-3 lh-lg bg-light" id="OurTeamTextid{{OurTeam.id}}">
+                            {{OurTeam.text}}
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                        <img src="{{OurTeam.teacherImage}}" class="w-75 ms-5 mt-5" />
+                        <p style="text-align:center; font-weight:bold" class="mt-5"> {{OurTeam.teacherName}}</p>
+                    </div>
+                    <div class="card" style="border: none">
+                        <div class="float-start d-flex">
+                            <button class="btn btn-outline-success" hidden="hidden" id="btn{{OurTeam.id}}" ng-click="UpdateAboutUs(OurTeam.id)">Update</button>
+                            <i class="fa fa-trash-o ms-5" hidden="hidden" id="delbtn{{OurTeam.id}}" ng-click="DeleteAboutUs(OurTeam.id)" style="font-size:30px;color:crimson"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .uploader-img1 {
+        position: relative;
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.35rem;
+        border: 1px dashed #ccd1d6;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+</style>

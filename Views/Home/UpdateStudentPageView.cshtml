@@ -1,0 +1,225 @@
+﻿@{
+    ViewData["Title"] = "AttendancePageView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+<div class="container bg-light">
+    <div class="row">
+        <h3 class="text-black text-center fw-bold mt-5 mb-5">UPDATE STUDENT ATTENDANCE</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" class="form-control StudentNameValues" id="StudentName" placeholder="Name" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" class="form-control" id="StudentId" onchange="FilterData();" placeholder="RollNo" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="date" placeholder="Date" id="OnDate" onchange="FilterData();" class="form-control" />
+        </div>
+    </div>
+    <div class="row mt-5">
+        <table class="table table-striped table-hover table-small-font table-tighten table-bordered" id="example">
+            <thead>
+                <tr id="tableheader">
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Sr.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Roll No.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Student</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Course</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Date</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">By</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Status </th>
+                </tr>
+            </thead>
+            <tbody id="tbody" class="border">
+            </tbody>
+        </table>
+        <input type="text" hidden="hidden" id="AttendanceId" />
+        <div class="float-end mb-3">
+            <button class="btn btn-warning float-end" id="UpdateAttendance" onclick="UpdateAttendance();">Update</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#example').hide();
+        $('#UpdateAttendance').hide();
+    })
+    var token = localStorage.getItem('token');
+    $("#StudentName").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("AutocompleteStudetnFunction","User")',
+                dataType: "json",
+                data: { StudentName: $("#StudentName").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.studentName, name: item.id, value: item.studentName };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    $('#ModalHeader').empty();
+                    $('#ModalBody').empty();
+                    $('#ModalHeader').append('<h4>Error</h4>');
+                    $('#ModalBody').append('<p>Error While Saving </p>');
+                    $('#MyModal').modal('show');
+                }
+            });
+        }
+    });
+
+    jQuery('#StudentName').blur(function () {
+        $('#StudentId').val('');
+        var Studentvalue = $('.StudentNameValues')[0];
+        var x = 1;
+        $.each(Studentvalue, function (key, value) {
+            var x1 = x++;
+            if (x1 == 1) {
+                if (value.uiAutocomplete.selectedItem != null) {
+                    $('#StudentId').val(value.uiAutocomplete.selectedItem.name);
+                }
+            }
+        });
+
+    });
+
+    function FilterData() {
+        debugger
+        var StudentId = $('#StudentId').val();
+        var InputDate = $('#OnDate').val();
+        var searchAttendance = new FormData();
+        searchAttendance.append('StudentId', StudentId);
+        searchAttendance.append('ForDate', InputDate);
+        $.ajax({
+            url: '/Home/StudentAttedanceQueryable',
+            type: 'POST',
+            data: searchAttendance,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $('#tbody').empty();
+                var html = "";
+                var x = 1;
+                for (var i = 0; i < response.length; i++) {
+                    var xx = x++;
+                    html += '<tr id="Serialkey' + response[i].id + '" class="AttendanceRow">';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + xx + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].studentid + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].studentName + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].classId + '' + response[i].sectionName + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].forDate + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].addedBy + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">';
+                    html += '<form id="SectionName" class="bg-gray" class="d-flex bg-white rounded-2" action="/action_page.php">';
+                    html += ((response[i].attendanceStatus == 'P') ? '<input type="radio" checked="checked" onclick="UpdateId(' + response[i].attendanceId + ')" name="fav_language" id = "' + response[i].id + '" value="P" class="radiosectionname ms-5">' : '<input type="radio" onclick="UpdateId(' + response[i].attendanceId + ')" name="fav_language" id = "' + response[i].id + '" value="P" class="radiosectionname ms-5">');
+                    html += '<label class="h6 ms-3 text-dark" for= "css">P</label>';
+                    html += ((response[i].attendanceStatus == 'A') ? '<input type="radio" checked="checked" onclick="UpdateId(' + response[i].attendanceId + ')" name="fav_language" id = "' + response[i].id + '" value="A" class="radiosectionname ms-5">' : '<input type="radio" onclick="UpdateId(' + response[i].attendanceId + ')" name="fav_language" id = "' + response[i].id + '" value="A" class="radiosectionname ms-5">');
+                    html += '<label class="h6 ms-3 text-dark" for= "css">A</label>';
+                    html += ((response[i].attendanceStatus == 'H-Day') ? '<input type="radio" checked="checked" name="fav_language" onclick="UpdateId(' + response[i].attendanceId + ')" id = "' + response[i].id + '" value="H-Day" class="radiosectionname ms-5">' : '<input type="radio" name="fav_language"  onclick="UpdateId(' + response[i].attendanceId + ')" id = "' + response[i].id + '" value="H-Day" class="radiosectionname ms-5">');
+                    html += '<label class="h6 ms-3 text-dark" for= "css">H/Day</label></form></td>';
+                    html += '</tr>';
+                }
+                $('#tbody').append(html);
+                $('#example').show();
+                $('#UpdateAttendance').show();
+            },
+            error: function (data) {
+                $('#ModalHeader').empty();
+                $('#ModalBody').empty();
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Error While Saving </p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+
+    function UpdateAttendance() {
+        var AttendanceId = $('#AttendanceId').val();
+        var data = $('.AttendanceRow');
+        var da = '';
+        var daq = '';
+        var Studentid = "";
+        var AttendanceStatus = "";
+        for (var i = 0; i < data.length; i++) {
+            da = data[i].cells;
+            $.each(da, function (key, item) {
+                if (key == 6) {
+                    daq = item.childNodes;
+                    $.each(daq, function (key, itemss) {
+                        for (var g = 0; g < itemss.length; g++) {
+                            if (itemss[g].checked == true) {
+                                return AttendanceStatus = itemss[g].value;
+                            }
+                            if (g == 2) {
+                                if (itemss[g].checked == false) {
+                                    AttendanceStatus.push('P');
+                                    Studentid.push(itemss[g].id);
+                                }
+                            }
+                        }
+                    })
+                }
+            })
+        }
+        $.ajax({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            url: '/Home/UpdateStudentAttendance',
+            type: 'POST',
+            data: { AttendanceStatus, AttendanceId },
+            success: function (response) {
+                $('#ModalHeader').empty();
+                $('#ModalBody').empty();
+                $('#ModalHeader').append('<h4>Success</h4>');
+                $('#ModalBody').append('<p>Attendence Updated Successfully </p>');
+                $('#MyModal').modal('show');
+            },
+            error: function (data) {
+                $('#ModalHeader').empty();
+                $('#ModalBody').empty();
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Error While Saving </p>');
+                $('#MyModal').modal('show');
+            }
+        })
+
+    }
+
+    function UpdateId(id) {
+        $('#AttendanceId').val(id);
+    }
+
+</script>
+<style>
+    .ui-autocomplete {
+        background-color: white;
+        list-style-type: none;
+        width: fit-content;
+    }
+
+        .ui-autocomplete .ui-menu-item:hover {
+            background-color: lightgray;
+        }
+
+        .ui-autocomplete .ui-menu-item:-ms-keyboard-active {
+            background-color: lightgray;
+        }
+
+        .ui-autocomplete .ui-menu-item:after {
+            background-color: lightgray;
+        }
+
+        .ui-autocomplete .ui-menu-item: {
+            background-color: lightgray;
+        }
+
+    .ui-helper-hidden-accessible {
+        display: none;
+    }
+</style>

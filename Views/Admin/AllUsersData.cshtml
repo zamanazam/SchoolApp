@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "AddUserPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+<div class="container-fluid mt-5">
+    <div class="row mb-4">
+        <div class="col-lg-4 col-md-4 com-sm-12">
+            <input type="text" placeholder="User Name" id="UserName" class="form-control" onchange="GetAllUsers()" />
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped table-hover" id="example">
+            <thead>
+                <tr>
+                    <th class="align-middle border text-center text-dark" scope="col">Sr.</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Name</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Father Name</th>
+                    <th class="align-middle border text-center text-dark" scope="col">As a</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Phone No.</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Email</th>
+                    <th class="align-middle border text-center text-dark" scope="col">CNIC</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Gender</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Age</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Created On</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Status</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Image</th>
+                    <th class="align-middle border text-center text-dark" scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="~/views/main/userstable.js"></script>

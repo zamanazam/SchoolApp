@@ -1,0 +1,301 @@
+﻿@{
+    ViewData["Title"] = "Add FeesPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+<div class="container-fluid bg-light">
+    <div class="row">
+    <h4 class="text-center text-dark fw-bold mt-5">Add Fees Forum</h4>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label class="text-light">Class :</label>
+            <select class="form-select" id="ClassIds" onchange="GetSectionNames();"></select>
+            <div>
+                <label class="mt-2 text-light">Section Name :</label>
+                <form id="SectionName" class="d-flex bg-white rounded-2" action="/action_page.php"></form>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label class="text-light">Roll No</label>
+            <input id="RollNos" placeholder="Roll No" class="form-control" type="text" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label class="text-light">Year</label>
+            <input type="date" class="form-control" onchange="ResultFilter();" id="OnDate" name="birthday">
+
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <label class="text-light" id="LabelForMonth">For Month</label>
+            <input type="date" placeholder="Fees For" class="form-control" id="FeesForMonth" />
+        </div>
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <label class="text-light" id="LabelForAmount">Amount</label>
+            <input type="text" placeholder="Fees Amount" class="form-control" id="FeesAmount" />
+        </div>
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <a class="btn mt-4" style="background-color: #00394F;" id="AddFees" onclick="AddFees();"><span class="text-white">ADD</span></a>
+            <div class="float-end">
+                <i class="fa fa-plus border p-lg-2 rounded-1" onclick="ShowAddForm();" style="font-size:36px;color:deepskyblue"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-5">
+        <table class="table table-striped table-hover table-small-font table-tighten table-bordered" id="example">
+            <thead>
+                <tr id="tableheader">
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Sr.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Roll No.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Student</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Father Name</th>
+                    <th class="align-middle border text-center text-dark" id="FeeDecidedColumnHeader" style="border: hidden;">Phone</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Email</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Class/Section</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Fees Decided</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Last Given On</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Last Given</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody" class="border">
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    ui-autocomplete {
+        color: deepskyblue;
+        background-color: white;
+    }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        $('#example').hide();
+        $('#FeesAmount').hide();
+        $('#AddFees').hide();
+        $('#FeesForMonth').hide();
+        $('#LabelForMonth').hide();
+        $('#LabelForAmount').hide();
+        GetClassNames();
+        GetMonthsName();
+    })
+
+    var token = localStorage.getItem('token');
+    function GetClassNames() {
+        $.ajax({
+            headers: {
+                Authorization: 'Bearer ' + token
+            },
+            url: '/Admin/GetClassSectionsData',
+            type: 'Get',
+            success: function (response) {
+                var html = "";
+                var sect = "";
+                var clas = response.class;
+                var section = response.sections;
+                html += '<option style="font-family: initial;" class="border border-bottom" value="0">Select Class</option>';
+
+                for (var i = 0; i < clas.length; i++) {
+                    html += '<option style="font-family: initial;" class="border border-bottom" value="' + clas[i].id + '">' + clas[i].name + '</option>';
+                }
+                $('#ClassIds').append(html);
+            }
+        })
+    }
+
+    function GetSectionNames() {
+        var ClassId = $('#ClassIds').val();
+        $.ajax({
+            url: '/Admin/GetSectionNames?ClassId=' + ClassId,
+            success: function (response) {
+                var html = "";
+                $('#SectionName').empty();
+                for (var i = 0; i < response.length; i++) {
+                    html += '<div class="ms-2">';
+                    html += '<input type="radio" id="' + response[i].id + '" name="fav_language" value="' + response[i].name + '" class="radiosectionname ms-5" onclick="ResultFilter()">';
+                    html += '<label class="h6 ms-3" for="css"> ' + response[i].name + ' </label><br>';
+                    html += '</div>';
+                }
+                $('#SectionName').append(html);
+            },
+            error: function (data) {
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Wrong Input</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+
+    function GetMonthsName() {
+        $.ajax({
+            url: '/Fees/GetAllMonthsName',
+            success: function (response) {
+                var Mont = response;
+                var html = "";
+                $('#MonthId').empty();
+                html += '<option style="font-family: initial;" class="border border-bottom" value="0">Select Month</option>';
+                for (var i = 0; i < Mont.length; i++) {
+                    html += '<option style="font-family: initial;" class="border border-bottom" value="' + Mont[i].id + '">' + Mont[i].name + '</option>';
+                }
+                $('#MonthId').append(html);
+            },
+            error: function (data) {
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Wrong Input</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+
+    function ResultFilter() {
+        var ClassId = $('#ClassIds').val();
+        var RollNo = $('#RollNos').val();
+        var Sections = $('.radiosectionname');
+        var Year = "";
+        var inputdate = $('#OnDate').val();
+        var MonthId = new Date(inputdate).getMonth() + 1;
+        var SectionName = "";
+        for (var i = 0; i < Sections.length; i++) {
+            if (Sections[i].checked == true) {
+                SectionName = Sections[i].value;
+            }
+        }
+        var feesSearch = new FormData();
+        feesSearch.append('SectionName', SectionName);
+        feesSearch.append('ClassId', ClassId);
+        feesSearch.append('RollNo', RollNo);
+        feesSearch.append('MonthId', MonthId);
+
+        if (yearRange(inputdate)) {
+            Year = new Date(inputdate).getFullYear();
+        }
+        if (Year == "" || Year == null) {
+            $('#ModalHeader').append('<h4>Error</h4>');
+            $('#ModalBody').append('<p>Please Add Valid Year</p>');
+            $('#MyModal').modal('show');
+        } else {
+            feesSearch.append('Year', Year);
+            $.ajax({
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                },
+                url: '/User/GetStudentbyConditions',
+                data: feesSearch,
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    $('#tbody').empty();
+                    var html = "";
+                    var x = 1;
+                    for (var i = 0; i < response.length; i++) {
+                        var xx = x++;
+                        html += '<tr id="Serialkey" class="border">';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + xx + ' </td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].id + ' </td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].name + ' </td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].fatherName + ' </td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].phone + ' </td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].email + ' </td>';
+                        //if (RoleId == 1) {
+                        //    html += '<td class=" align-middle text-center text-light" id="FeeDecidedColumn" style="border: hidden;">' + response[i].feesDecided + ' </td>';
+                        //}
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].classId + '/' + response[i].sectionName + '</td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].feesDecided + 'Rs/-</td>';
+
+                        //To Adjust Date And Time in Good Format
+                        var DateTimeUploadOn = response[i].lastOn;
+                        var JustDate = DateTimeUploadOn.split('T')[0];
+                        var newdate = moment(JustDate).format('DD-MM-YYYY');
+                        var justtime = DateTimeUploadOn.split('T')[1];
+                        var ts = justtime;
+                        var H = +ts.substr(0, 2);
+                        var h = (H % 12) || 12;
+                        h = (h < 10) ? ("0" + h) : h;
+                        var ampm = H < 12 ? " AM" : " PM";
+                        ts = h + ts.substr(2, 3) + ampm;
+
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + JustDate + '       ' + ts + '</td>';
+                        html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].lastGivenAmount + 'Rs/-</td>';
+                        html += '</tr>';
+                    }
+                    $('#tbody').append(html);
+                    $('#example').show();
+                },
+                error: function (data) {
+                    $('#ModalHeader').append('<h4>Error</h4>');
+                    $('#ModalBody').append('<p>Wrong Input</p>');
+                    $('#MyModal').modal('show');
+                }
+            })
+        }
+    }
+    function yearRange(inputdate) {
+        let inputdate1 = new Date(inputdate);
+        let nowdate = new Date();
+        let startingDate = new Date("2010-01-01");
+        if (nowdate >= inputdate1 && inputdate1 >= startingDate) return true;
+        return false;
+    }
+
+    function ShowAddForm() {
+        $('#AddFees').show();
+        $('#FeesAmount').show();
+        $('#FeesForMonth').show();
+        $('#LabelForMonth').show();
+        $('#LabelForAmount').show();
+    }
+
+    function AddFees(){
+        var Amount = $('#FeesAmount').val();
+        var inputfeedate = $('#FeesForMonth').val();
+        var Year = new Date(inputfeedate).getFullYear();
+        var Month = new Date(inputfeedate).getMonth() +1;
+        var StudentId = $('#RollNos').val();
+        if(StudentId == "" || StudentId == null)
+        {
+            $('#ModalHeader').append('<h4>Error</h4>');
+            $('#ModalBody').append('<p>Please Enter RollNo.</p>');
+            $('#MyModal').modal('show');
+            return null;
+        }
+        var AddFeesDTO = new FormData();
+        AddFeesDTO.append('FeesGiven', Amount);
+        AddFeesDTO.append('Year', Year);
+        AddFeesDTO.append('MonthId', Month);
+        AddFeesDTO.append('StudentId', StudentId);
+        $.ajax({
+            headers :{
+                'Authorization' : 'Bearer ' + token
+            },
+            url: '/Fees/AddFeesbyRollNo',
+            data: AddFeesDTO,
+            type: 'POST',
+            processData: false,
+            contentType: false,
+            success: function(response){
+                $('#ModalHeader').append('<h4>Success</h4>');
+                $('#ModalBody').append('<p>Operation Completed Successfully.</p>');
+                $('#MyModal').modal('show');
+            },
+            error: function(data){
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Wrong Input</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+
+</script>

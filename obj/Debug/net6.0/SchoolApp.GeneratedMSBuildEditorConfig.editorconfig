@@ -1,0 +1,149 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SchoolApp
+build_property.RootNamespace = SchoolApp
+build_property.ProjectDir = C:\Users\Zaman\source\repos\SchoolApp\SchoolApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\Zaman\source\repos\SchoolApp\SchoolApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Admin/AddNewResultPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkTmV3UmVzdWx0UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Admin/AddUserPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVXNlclBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Admin/AllUsersData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsVXNlcnNEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Admin/CheckResultPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hlY2tSZXN1bHRQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Education/MiddleEducationView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXE1pZGRsZUVkdWNhdGlvblZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Education/OurTeamView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXE91clRlYW1WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Education/PrimaryEducationView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXFByaW1hcnlFZHVjYXRpb25WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Education/SecondaryEducationView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXFNlY29uZGFyeUVkdWNhdGlvblZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Fees/AddFeesView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlc1xBZGRGZWVzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Fees/AddPayRollView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlc1xBZGRQYXlSb2xsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Fees/GetViewForFees.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlc1xHZXRWaWV3Rm9yRmVlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Fees/PayRollView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlc1xQYXlSb2xsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/AddTeacherAttendance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRUZWFjaGVyQXR0ZW5kYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/AttendancePageView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdHRlbmRhbmNlUGFnZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/LogInPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dJblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/StudentAttendancePageView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50QXR0ZW5kYW5jZVBhZ2VWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/TeacherAttendancePageView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFjaGVyQXR0ZW5kYW5jZVBhZ2VWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/UpdateAttendancePageView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBdHRlbmRhbmNlUGFnZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Home/UpdateStudentPageView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVTdHVkZW50UGFnZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/_Layout1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/_LayOutNoBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlPdXROb0Jhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/_StudentsLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdHVkZW50c0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/VisionandMission/VisionandMissionView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaW9uYW5kTWlzc2lvblxWaXNpb25hbmRNaXNzaW9uVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zaman/source/repos/SchoolApp/SchoolApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-l2kjf5s8rg

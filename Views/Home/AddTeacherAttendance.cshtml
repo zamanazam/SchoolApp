@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "AddTeacherAttendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+<div class="contaienr bg-light">
+    <div class="row">
+    <h3 class="text-center mt-5 text-dark fw-bold">ADD STAFF ATTENDANCE</h3>
+    </div>
+    <div class="row mt-5">
+        <div class="col-lg-4 col-md-6 col-sm-12"></div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="date" class="form-control" placeholder="Date" id="InputDate" onchange="ResultFilter();" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12"></div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped table-hover table-small-font table-tighten table-bordered" id="example">
+            <thead>
+                <tr id="tableheader">
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Sr.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Roll No.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Student</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Attendance</th>
+                </tr>
+            </thead>
+            <tbody id="tbody" class="border">
+            </tbody>
+        </table>
+    </div>
+    <div class="row mt-5">
+        <div class="float-end">
+            <button class="btn btn-warning" id="AddAttendace" onclick="AddAttendance();">ADD Attendance</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var token = localStorage.getItem('token');
+    function ResultFilter() {
+        debugger
+        var AttendanceDate = $('#InputDate').val();
+        $.ajax({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            url: '/Home/GetTeachersAttendancebyDate',
+            data: {AttendanceDate},
+            success: function (response) {
+                debugger
+                console.log('att',response);
+                $('#tbody').empty();
+                var html = "";
+                var x = 1;
+                for (var i = 0; i < response.length; i++) {
+                    var xx = x++;
+                    html += '<tr id="Serialkey' + response[i].id + '" class="AttendanceRow">';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + xx + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].id + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">' + response[i].name + ' </td>';
+                    html += '<td class=" align-middle text-center text-dark" style="border: hidden;">';
+                    html += '<form id="SectionName" class="bg-gray" class="d-flex bg-white rounded-2" action="/action_page.php">';
+                    html += '<input type="radio" name = "fav_language" id = "' + response[i].id + '" value="P" class="radiosectionname ms-5">';
+                    html += '<label class="h6 ms-3 text-dark" for= "css">P</label>';
+                    html += '<input type="radio" name = "fav_language" id = "' + response[i].id + '" value="A" class="radiosectionname ms-5">';
+                    html += '<label class="h6 ms-3 text-dark" for= "css">A</label>';
+                    html += '<input type="radio" name = "fav_language" id = "' + response[i].id + '" value="H-Day" class="radiosectionname ms-5">';
+                    html += '<label class="h6 ms-3 text-dark" for= "css">H/Day</label></form></td>';
+                    html += '</tr>';
+                }
+                $('#tbody').append(html);
+                $('#example').show();
+                $('#AddAttendace').show();
+
+            },
+            error: function (data) {
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Wrong Input</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+
+    function AddAttendance() {
+        debugger
+        var InputDate = $('#InputDate').val();
+        var data = $('.AttendanceRow');
+        var da = '';
+        var daq = '';
+        var Studentid = [];
+        var AttendanceStatus = [];
+        for (var i = 0; i < data.length; i++) {
+            da = data[i].cells;
+            $.each(da, function (key, item) {
+                if (key == 3) {
+                    daq = item.childNodes;
+                    $.each(daq, function (key, itemss) {
+                        for (var g = 0; g < itemss.length; g++) {
+                            if (itemss[g].checked == true) {
+                                AttendanceStatus.push(itemss[g].value);
+                                return Studentid.push(itemss[g].id);
+                            }
+                            if (g == 2) {
+                                if (itemss[g].checked == false) {
+                                    AttendanceStatus.push('P');
+                                    Studentid.push(itemss[g].id);
+                                }
+                            }
+                        }
+                    })
+                }
+            })
+        }
+
+        var addAttendance = new FormData();
+        addAttendance.append('Studentid', Studentid);
+        addAttendance.append('AttendanceStatus', AttendanceStatus);
+        addAttendance.append('ForDate', InputDate);
+        debugger
+        $.ajax({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            url: '/Home/AddAttendance',
+            type: 'POST',
+            data: addAttendance,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $('#ModalHeader').append('<h4>Success</h4>');
+                $('#ModalBody').append('<p>Operation Completed Successfully.</p>');
+                $('#MyModal').modal('show');
+            },
+            error: function (data) {
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>Wrong Input</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+</script>

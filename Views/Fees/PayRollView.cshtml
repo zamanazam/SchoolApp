@@ -1,0 +1,213 @@
+﻿@{
+    ViewData["Title"] = "Staff Pay Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+
+
+<div class="container-fluid">
+    <h3 class="text-center text-dark fw-bold mt-5 text-decoration-underline">STAFF PAY RECORD</h3>
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Staff Name" onchange="SearchData()" class="form-control StaffNameValues" id="StaffName" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="text" placeholder="Staff Id" onchange="SearchData()" class="form-control" id="StaffId" />
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <input type="date" placeholder="Date" onchange="SearchData()" class="form-control" id="InputDate" />
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <table class="table table-striped table-hover table-small-font table-tighten table-bordered" id="example">
+            <thead>
+                <tr id="tableheader">
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Sr.</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Staff ID</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Name</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Designation</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Father Name</th>
+                    <th class="align-middle border text-center text-dark" id="FeeDecidedColumnHeader" style="border: hidden;">Phone</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Email</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Pay Decided</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Given Amount</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Given On</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">Given By</th>
+                    <th class="align-middle border text-center text-dark" style="border: hidden;">For Month</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody" class="border">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#example').hide();
+    })
+
+    $("#StaffName").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("AutocompleteTeacherFunction","User")',
+                dataType: "json",
+                data: { TeacherName: $("#StaffName").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.studentName, name: item.id, value: item.studentName };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    $('#ModalHeader').empty();
+                    $('#ModalBody').empty();
+                    $('#ModalHeader').append('<h4>Error</h4>');
+                    $('#ModalBody').append('<p>Error While Saving </p>');
+                    $('#MyModal').modal('show');
+                }
+            });
+        }
+    });
+
+    jQuery('#StaffName').blur(function () {
+        $('#StaffId').val('');
+        var Staffvalue = $('.StaffNameValues')[0];
+        var x = 1;
+        $.each(Staffvalue, function (key, value) {
+            var x1 = x++;
+            if (x1 == 1) {
+                if (value.uiAutocomplete.selectedItem != null) {
+                    $('#StaffId').val(value.uiAutocomplete.selectedItem.name);
+                }
+            }
+        });
+
+    });
+
+
+    function SearchData() {
+        var StaffId = '';
+        var Staffvalue = $('.StaffNameValues')[0];
+        var x = 1;
+        $.each(Staffvalue, function (key, value) {
+            var x1 = x++;
+            if (x1 == 1) {
+                if (value.uiAutocomplete.selectedItem != null) {
+                    StaffId= value.uiAutocomplete.selectedItem.name;
+                }
+            }
+        });
+        if (StaffId == "") {
+            $('#ModalHeader').empty();
+            $('#ModalBody').empty();
+            $('#ModalHeader').append('<h4>Error</h4>');
+            $('#ModalBody').append('<p>Please Select valid StaffId</p>');
+            $('#MyModal').modal('show');
+            return null;
+        }
+        var InputDate = $('#InputDate').val();
+        var Month = new Date(InputDate).getMonth() + 1;
+        var Year = new Date(InputDate).getFullYear();
+        var form = new FormData();
+        form.append('StaffId', StaffId);
+        form.append('MonthId', Month);
+        form.append('Year', Year);
+        debugger
+        $.ajax({
+            url: '/Fees/GetPayRollQueryable',
+            type: 'POST',
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                debugger
+                console.log('res',response);
+                $('#tbody').empty();
+                var html = "";
+                var th = [];
+                var x = 1;
+                $.each(response, function (key, item) {
+                    var Total = 0;
+                    var TotalGot = 0;
+                    var Percentage = 0;
+                    var xx = x++;
+                    html += '<tr id="Serialkey" class="border">';
+                    html += '<td class="align-middle text-center text-dark">' + xx + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.id + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.name + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.roleName + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.fatherName + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.phone + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.email + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.payDecided + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.payGivenAmount + ' </td>';
+
+                    //To Adjust Date And Time in Good Format
+                    var DateTimeUploadOn = item.givenOn;
+                    var JustDate = DateTimeUploadOn.split('T')[0];
+                    var newdate = moment(JustDate).format('DD-MM-YYYY');
+                    var justtime = DateTimeUploadOn.split('T')[1];
+                    var ts = justtime;
+                    var H = +ts.substr(0, 2);
+                    var h = (H % 12) || 12;
+                    h = (h < 10) ? ("0" + h) : h;
+                    var ampm = H < 12 ? " AM" : " PM";
+                    ts = h + ts.substr(2, 3) + ampm;
+
+                    html += '<td class="align-middle text-center text-dark">' + newdate + ' ' + ts + '</td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.givenBy + ' </td>';
+                    html += '<td class="align-middle text-center text-dark">' + item.monthName + ',' + item.batchYear + ' </td>';
+                    html += '</tr>';
+                    $('#StaffId').val(item.id);
+                })
+
+                $("#tbody").append(html);
+                $('#example').show();
+            },
+            error: function (data) {
+                $('#ModalHeader').empty();
+                $('#ModalBody').empty();
+                $('#ModalHeader').append('<h4>Error</h4>');
+                $('#ModalBody').append('<p>No Data Found.</p>');
+                $('#MyModal').modal('show');
+            }
+        })
+    }
+</script>
+<style>
+    .ui-autocomplete {
+        background-color: white;
+        list-style-type: none;
+        width: fit-content;
+    }
+
+        .ui-autocomplete .ui-menu-item:hover {
+            background-color: lightgray;
+        }
+
+        .ui-autocomplete .ui-menu-item:-ms-keyboard-active {
+            background-color: lightgray;
+        }
+
+        .ui-autocomplete .ui-menu-item:after {
+            background-color: lightgray;
+        }
+
+        .ui-autocomplete .ui-menu-item: {
+            background-color: lightgray;
+        }
+
+    .ui-helper-hidden-accessible {
+        display: none;
+    }
+</style>
+
+
